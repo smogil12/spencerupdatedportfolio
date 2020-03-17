@@ -1,0 +1,66 @@
+.my-row {
+  justify-content: center;
+  color: grey;
+}
+
+.contact {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: "Baskervville", serif;
+  font-size: 30px;
+  color: grey;
+}
+
+.about {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: "Baskervville", serif;
+  font-size: 30px;
+  color: grey;
+}
+
+.about:hover {
+  font-weight: bold;
+  color: yellow;
+}
+
+.contact:hover {
+  font-weight: bold;
+  color: red;
+}
+
+.portfolio:hover {
+  font-weight: bold;
+  color: green;
+}
+
+.text-col {
+}
+
+.portfolio {
+  color: gray;
+  font-family: "Baskervville", serif;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+body {
+  justify-content: center;
+  background: url("https://images.unsplash.com/photo-1418075285575-c402f1f7340f?ixlib=rb-1.2.1&w=1000&q=80")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.card-group {
+  margin-top: 100px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.card-img-top {
+  height: 50px;
+  width: 50px;
+}

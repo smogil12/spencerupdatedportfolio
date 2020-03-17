@@ -1,0 +1,23 @@
+{
+  "name": "spencerupdatedportfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smogil12/spencerupdatedportfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smogil12/spencerupdatedportfolio/issues"
+  },
+  "homepage": "https://github.com/smogil12/spencerupdatedportfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

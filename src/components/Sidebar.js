@@ -7,6 +7,7 @@ import {
   FolderIcon,
   CalendarIcon,
   XMarkIcon,
+  CogIcon,
 } from '@heroicons/react/24/outline';
 
 const Sidebar = ({ children }) => {
@@ -20,6 +21,7 @@ const Sidebar = ({ children }) => {
   const navigation = [
     { name: 'Home', href: '/', icon: HomeIcon, current: isActive('/') },
     { name: 'Projects', href: '/portfolio', icon: FolderIcon, current: isActive('/portfolio') },
+    { name: 'Implementations', href: '/implementations', icon: CogIcon, current: isActive('/implementations') },
     { name: 'Contact', href: '/contact', icon: CalendarIcon, current: isActive('/contact') },
   ];
 

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js"
+      defer
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="portfolio.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baskervville&display=swap"
+      rel="stylesheet"
+    />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div
+      class="h-screen flex overflow-hidden bg-gray-100"
+      x-data="{ sidebarOpen: false }"
+      @keydown.window.escape="sidebarOpen = false"
+    >
+      <!-- Off-canvas menu for mobile -->
+      <div x-show="sidebarOpen" class="md:hidden">
+        <div
+          @click="sidebarOpen = false"
+          x-show="sidebarOpen"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="fixed inset-0 z-30 transition-opacity ease-linear duration-300"
+        >
+          <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
+        </div>
+        <div class="fixed inset-0 flex z-40">
+          <div
+            x-show="sidebarOpen"
+            x-transition:enter-start="-translate-x-full"
+            x-transition:enter-end="translate-x-0"
+            x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="-translate-x-full"
+            class="flex-1 flex flex-col max-w-xs w-full bg-gray-800 transform ease-in-out duration-300"
+          >
+            <div class="absolute top-0 right-0 -mr-14 p-1">
+              <button
+                x-show="sidebarOpen"
+                @click="sidebarOpen = false"
+                class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+              <nav class="mt-5 px-2">
+                <a
+                  href="index.html"
+                  class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150"
+                >
+                  <svg
+                    class="mr-4 h-6 w-6 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
+                    stroke="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"
+                    />
+                  </svg>
+                  Home
+                </a>
+
+                <a
+                  href="#"
+                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150 bg-gray-900"
+                >
+                  <svg
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
+                    stroke="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                    />
+                  </svg>
+                  Projects
+                </a>
+                <a
+                  href="newcontact.html"
+                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
+                >
+                  <svg
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
+                    stroke="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  Contact
+                </a>
+              </nav>
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-14">
+            <!-- Force sidebar to shrink to fit close icon -->
+          </div>
+        </div>
+      </div>
+      <!-- Static sidebar for desktop -->
+      <div class="hidden md:flex md:flex-shrink-0">
+        <div class="flex flex-col w-64 bg-gray-800">
+          <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+            <!-- Sidebar component, swap this element with another sidebar if you like -->
+            <nav class="mt-5 flex-1 px-2 bg-gray-800">
+              <a
+                href="index.html"
+                class="group flex items-center px-2 py-2 text-gray-300 text-sm leading-5 font-medium rounded-md focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150 hover:bg-gray-700"
+              >
+                <svg
+                  class="mr-3 h-6 w-6 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"
+                  />
+                </svg>
+                Home
+              </a>
+
+              <a
+                href="portfolio.html"
+                class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md bg-gray-900 hover:text-white focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
+              >
+                <svg
+                  class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                  />
+                </svg>
+                Projects
+              </a>
+              <a
+                href="newcontact.html"
+                class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
+              >
+                <svg
+                  class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                Contact
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col w-0 flex-1 overflow-hidden">
+        <div class="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
+          <button
+            @click.stop="sidebarOpen = true"
+            class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150"
+          >
+            <svg
+              class="h-6 w-6"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+        <main
+          class="flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6"
+          tabindex="0"
+          x-data
+          x-init="$el.focus()"
+        >
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-2xl font-semibold text-gray-900"></h1>
+          </div>
+
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <!-- Replace with your content -->
+            <div
+              class="relative bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-18 lg:pb-28 lg:px-8"
+            >
+              <div class="absolute inset-0">
+                <div class="bg-white h-1/3 sm:h-2/3"></div>
+              </div>
+              <div class="relative max-w-7xl mx-auto">
+                <div class="text-center">
+                  <h2
+                    class="text-3xl leading-9 tracking-tight font-extrabold text-red-900 sm:text-4xl sm:leading-10"
+                  >
+                    Spencer's Portfolio
+                  </h2>
+                  <p
+                    class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4"
+                  >
+                    Check out some of my projects completed at Emplifi
+                  </p>
+                </div>
+                <div
+                  class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-1 lg:max-w-none"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="lg:max-h-fit max-w-full object-cover"
+                        src="https://i.imgur.com/AVxpjcD.png"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://smogil12.github.io/Pet-Project/"
+                          target="_blank"
+                          class="block"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            Pet Project
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Group project that utilizes HTML, CSS Javascript,
+                            jQuery, Bulma, Axios, and PetFinder's API to match
+                            adoptable dogs to people based on a user input form
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="ml-3 h-10 w-10 rounded-full"
+                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqPpJK3kidX0ShG4nV2OSnW7WmO0C3pCdcIMsFEdku8gRU-TG5&usqp=CAU"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil & Columbia Team Members
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="mx-auto lg:max-h-fit max-w-full object-cover"
+                        src="https://i.imgur.com/dW9eQ3g.png"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://smogil12.github.io/giftastic/ "
+                          target="_blank"
+                          class="block"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            Giftastic
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Project that uses HTML, CSS Javascript, jQuery,
+                            Ajax, and Gifphy's API. Pre-made buttons are
+                            appended with a for loop through JS and added user
+                            input functionality
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="h-48 w-full object-cover"
+                        src="https://www.pedestrian.tv/content/uploads/2019/03/sopranos-movie-release-date.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://expressfriendfinderspencer.herokuapp.com"
+                          target="_blank"
+                          class="block"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            Friend Finder
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Full Stack Web Application that uses Node.js,
+                            jQuery, AJAX, Express and Bootstrap. Through
+                            completing survey, user is matched with a character
+                            from The Sopranos with logic from JS
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="h-48 w-full object-cover"
+                        src="https://media.npr.org/assets/img/2013/11/26/amazon_wide-27f5802cec7710e52f61620c0d6d9373f4cb55e6-s800-c85.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://github.com/smogil12/bamazon"
+                          class="block"
+                          target="_blank"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            BAmazon
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Command line application which is a mock Amazon
+                            warehouse. Orders are placed using Node.js, and NPM
+                            packages mysql and inquirer. To run, Git Clone and
+                            NPM install
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="h-48 w-full object-cover"
+                        src="https://www.scdn.co/i/_global/open-graph-default.png"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://github.com/smogil12/LIRI-Bot"
+                          class="block"
+                          target="_blank"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            LIRI-Bot
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Language Interpretation and Recognition Interface
+                            that uses Node.js and Javascript to search Spotify,
+                            Bands in Town, and OMDB based on user input.
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="h-48 w-full object-cover"
+                        src="https://cdn.hipwallpaper.com/m/60/35/aRMWbg.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://ontiltsports.herokuapp.com/"
+                          class="block"
+                          target="_blank"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            OnTilt
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Group project full-stack application that uses
+                            mySQL, express, express-handlebars, Javascript, and
+                            Sequelize that lets user bet on upcoming basketball
+                            games
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="ml-3 h-10 w-10 rounded-full"
+                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqPpJK3kidX0ShG4nV2OSnW7WmO0C3pCdcIMsFEdku8gRU-TG5&usqp=CAU"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil & Columbia Team Members
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="h-48 w-full object-cover"
+                        src="https://media.npr.org/assets/img/2013/11/26/amazon_wide-27f5802cec7710e52f61620c0d6d9373f4cb55e6-s800-c85.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://github.com/smogil12/bamazon"
+                          class="block"
+                          target="_blank"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            BAmazon
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Command line application which is a mock Amazon
+                            warehouse. Orders are placed using Node.js, and NPM
+                            packages mysql and inquirer. To run, Git Clone and
+                            NPM install
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="h-48 w-full object-cover"
+                        src="https://www.scdn.co/i/_global/open-graph-default.png"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://github.com/smogil12/LIRI-Bot"
+                          class="block"
+                          target="_blank"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            LIRI-Bot
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Language Interpretation and Recognition Interface
+                            that uses Node.js and Javascript to search Spotify,
+                            Bands in Town, and OMDB based on user input.
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                  >
+                    <div class="flex-shrink-0">
+                      <img
+                        class="h-48 w-full object-cover"
+                        src="https://cdn.hipwallpaper.com/m/60/35/aRMWbg.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      class="flex-1 bg-white p-6 flex flex-col justify-between"
+                    >
+                      <div class="flex-1">
+                        <a
+                          href="https://ontiltsports.herokuapp.com/"
+                          class="block"
+                          target="_blank"
+                        >
+                          <h3
+                            class="mt-2 text-xl leading-7 font-semibold text-gray-900"
+                          >
+                            OnTilt
+                          </h3>
+                          <p class="mt-3 text-base leading-6 text-gray-500">
+                            Group project full-stack application that uses
+                            mySQL, express, express-handlebars, Javascript, and
+                            Sequelize that lets user bet on upcoming basketball
+                            games
+                          </p>
+                        </a>
+                      </div>
+                      <div class="mt-6 flex items-center">
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="h-10 w-10 rounded-full"
+                              src="https://i.imgur.com/wioFsZM.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="flex-shrink-0">
+                          <a href="#">
+                            <img
+                              class="ml-3 h-10 w-10 rounded-full"
+                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqPpJK3kidX0ShG4nV2OSnW7WmO0C3pCdcIMsFEdku8gRU-TG5&usqp=CAU"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="ml-3">
+                          <p
+                            class="text-sm leading-5 font-medium text-gray-900"
+                          >
+                            <a href="#" class="hover:underline">
+                              Spencer Mogil & Columbia Team Members
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /End replace -->
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

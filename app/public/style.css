@@ -1,0 +1,86 @@
+.my-col {
+  height: 500px;
+}
+
+.name {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+}
+body {
+  justify-content: center;
+  background: url("http://images6.fanpop.com/image/photos/41200000/New-backgrd-full-screen-hd-josepinejackson-41206262-1920-1200.jpg")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.row {
+}
+.my-row {
+  justify-content: center;
+  color: grey;
+}
+
+.contact {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: "Baskervville", serif;
+  font-size: 30px;
+  color: grey;
+}
+
+.about {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: "Baskervville", serif;
+  font-size: 30px;
+  color: grey;
+}
+
+.about:hover {
+  font-weight: bold;
+  color: yellow;
+}
+
+.contact:hover {
+  font-weight: bold;
+  color: red;
+}
+
+.portfolio:hover {
+  font-weight: bold;
+  color: green;
+}
+
+.text-col {
+}
+
+.portfolio {
+  color: gray;
+  font-family: "Baskervville", serif;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.name1 {
+  color: rgb(235, 248, 161);
+
+  margin-top: 60px;
+  font-family: "Baskervville", serif;
+  font-size: 20px;
+}
+
+.text-col2 {
+}
+
+.name2 {
+  font-family: "Baskervville", serif;
+  color: rgb(235, 248, 161);
+
+  margin-top: 60px;
+  font-family: "Baskervville", serif;
+  font-size: 20px;
+}

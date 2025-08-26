@@ -1,0 +1,62 @@
+body {
+  justify-content: center;
+  background: url("https://ak2.picdn.net/shutterstock/videos/21348502/thumb/1.jpg")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.my-row {
+  justify-content: center;
+  color: grey;
+}
+
+.contact {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: "Baskervville", serif;
+  font-size: 30px;
+  color: grey;
+}
+
+.about {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: "Baskervville", serif;
+  font-size: 30px;
+  color: grey;
+}
+
+.about:hover {
+  font-weight: bold;
+  color: yellow;
+}
+
+.contact:hover {
+  font-weight: bold;
+  color: red;
+}
+
+.portfolio:hover {
+  font-weight: bold;
+  color: green;
+}
+
+.portfolio {
+  color: gray;
+  font-family: "Baskervville", serif;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.card-img {
+  height: 210px;
+  width: 190px;
+}
+
+.pic-row {
+  margin-top: 60px;
+  margin-left: 50px;
+}

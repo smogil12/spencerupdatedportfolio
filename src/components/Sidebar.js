@@ -20,8 +20,8 @@ const Sidebar = ({ children }) => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: HomeIcon, current: isActive('/') },
-    { name: 'Projects', href: '/portfolio', icon: FolderIcon, current: isActive('/portfolio') },
     { name: 'Implementations', href: '/implementations', icon: CogIcon, current: isActive('/implementations') },
+    { name: 'Projects', href: '/portfolio', icon: FolderIcon, current: isActive('/portfolio') },
     { name: 'Contact', href: '/contact', icon: CalendarIcon, current: isActive('/contact') },
   ];
 

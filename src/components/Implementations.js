@@ -9,7 +9,7 @@ const Implementations = () => {
       description:
         'Implemented comprehensive customer success strategies and processes that improved client retention rates by 35% and satisfaction scores across multiple enterprise accounts. Developed automated onboarding workflows and success metrics tracking.',
       imageUrl:
-        'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+        'https://i.imgur.com/kNcC5Io.jpeg',
       date: 'Dec 2024',
       datetime: '2024-12-01',
       category: { title: 'Customer Success', href: '#' },
@@ -70,17 +70,36 @@ const Implementations = () => {
           </p>
           <div className="mt-16 space-y-20 lg:mt-20">
             {implementations.map((implementation) => (
-              <article key={implementation.id} className="relative isolate flex flex-col gap-8 lg:flex-row">
-                <div className="lg:w-64 lg:shrink-0">
-                  <div className="relative aspect-video sm:aspect-2/1 lg:aspect-square">
+              <article key={implementation.id} className="relative isolate">
+                <div className="max-w-xl">
+                  <div className="flex items-center gap-x-4 text-xs">
+                    <time dateTime={implementation.datetime} className="text-gray-500">
+                      {implementation.date}
+                    </time>
+                    <a
+                      href={implementation.category.href}
+                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                    >
+                      {implementation.category.title}
+                    </a>
+                  </div>
+                  <div className="group relative">
+                    <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                      <a href={implementation.href}>
+                        <span className="absolute inset-0" />
+                        {implementation.title}
+                      </a>
+                    </h3>
+                    <p className="mt-5 text-sm/6 text-gray-600">{implementation.description}</p>
+                  </div>
+                  <div className="mt-8 w-full">
                     <img
                       alt=""
                       src={implementation.imageUrl}
-                      className="h-full w-full rounded-2xl bg-gray-50 object-cover"
+                      className="w-full rounded-2xl bg-gray-50 object-cover"
                     />
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
-                  <div className="mt-6 flex items-center gap-x-4 lg:mt-8">
+                  <div className="mt-6 flex items-center gap-x-4">
                     <img
                       alt=""
                       src={implementation.author.imageUrl}
@@ -95,28 +114,6 @@ const Implementations = () => {
                       </p>
                       <p className="text-gray-600">{implementation.author.role}</p>
                     </div>
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-x-4 text-xs">
-                    <time dateTime={implementation.datetime} className="text-gray-500">
-                      {implementation.date}
-                    </time>
-                    <a
-                      href={implementation.category.href}
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >
-                      {implementation.category.title}
-                    </a>
-                  </div>
-                  <div className="group relative max-w-xl">
-                    <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                      <a href={implementation.href}>
-                        <span className="absolute inset-0" />
-                        {implementation.title}
-                      </a>
-                    </h3>
-                    <p className="mt-5 text-sm/6 text-gray-600">{implementation.description}</p>
                   </div>
                 </div>
               </article>

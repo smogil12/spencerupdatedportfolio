@@ -3,22 +3,22 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import Portfolio from './components/Portfolio';
-import Implementations from './components/Implementations';
 import Contact from './components/Contact';
+import Implementations from './components/Implementations';
+import CustomerSuccessImplementation from './components/CustomerSuccessImplementation';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Sidebar>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/implementations" element={<Implementations />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </Sidebar>
-      </div>
+      <Sidebar>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/implementations" element={<Implementations />} />
+          <Route path="/implementations/customer-success-implementation" element={<CustomerSuccessImplementation />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Sidebar>
     </Router>
   );
 }

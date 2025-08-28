@@ -1,11 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Implementations = () => {
+  const navigate = useNavigate();
+
   const implementations = [
     {
       id: 1,
       title: 'Customer Success Implementation',
-      href: '#',
+      href: '/implementations/customer-success-implementation',
       description:
         'Implemented comprehensive customer success strategies and processes that improved client retention rates by 35% and satisfaction scores across multiple enterprise accounts. Developed automated onboarding workflows and success metrics tracking.',
       imageUrl:
@@ -58,6 +61,22 @@ const Implementations = () => {
     },
   ];
 
+  const handleClick = (href) => {
+    console.log('Button clicked! Navigating to:', href);
+    if (href.startsWith('/')) {
+      try {
+        navigate(href);
+        console.log('React Router navigation successful');
+      } catch (error) {
+        console.log('React Router navigation failed, using fallback:', error);
+        window.location.href = href;
+      }
+    }
+  };
+
+  // Debug logging
+  console.log('Implementations data:', implementations);
+
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -69,55 +88,97 @@ const Implementations = () => {
             Showcasing key implementations and process improvements from my professional experience in customer success and operations.
           </p>
           <div className="mt-16 space-y-20 lg:mt-20">
-            {implementations.map((implementation) => (
-              <article key={implementation.id} className="relative isolate">
-                <div className="max-w-xl">
-                  <div className="flex items-center gap-x-4 text-xs">
-                    <time dateTime={implementation.datetime} className="text-gray-500">
-                      {implementation.date}
-                    </time>
-                    <a
-                      href={implementation.category.href}
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >
-                      {implementation.category.title}
-                    </a>
-                  </div>
-                  <div className="group relative">
-                    <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                      <a href={implementation.href}>
-                        <span className="absolute inset-0" />
-                        {implementation.title}
+            {implementations.map((implementation) => {
+              console.log(`Implementation ${implementation.id} href:`, implementation.href);
+              return (
+                <article key={implementation.id} className="relative isolate">
+                  <div className="max-w-xl">
+                    <div className="flex items-center gap-x-4 text-xs">
+                      <time dateTime={implementation.datetime} className="text-gray-500">
+                        {implementation.date}
+                      </time>
+                      <a
+                        href={implementation.category.href}
+                        className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                      >
+                        {implementation.category.title}
                       </a>
-                    </h3>
-                    <p className="mt-5 text-sm/6 text-gray-600">{implementation.description}</p>
-                  </div>
-                  <div className="mt-8 w-full">
-                    <img
-                      alt=""
-                      src={implementation.imageUrl}
-                      className="w-full rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
-                  <div className="mt-6 flex items-center gap-x-4">
-                    <img
-                      alt=""
-                      src={implementation.author.imageUrl}
-                      className="h-10 w-10 rounded-full bg-gray-50"
-                    />
-                    <div className="text-sm">
-                      <p className="font-semibold text-gray-900">
-                        <a href={implementation.author.href}>
-                          <span className="absolute inset-0" />
-                          {implementation.author.name}
-                        </a>
-                      </p>
-                      <p className="text-gray-600">{implementation.author.role}</p>
+                    </div>
+                    <div className="group relative">
+                      <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                        {implementation.href.startsWith('/') ? (
+                          <button
+                            onClick={() => handleClick(implementation.href)}
+                            style={{
+                              background: 'none',
+                              border: 'none',
+                              padding: 0,
+                              margin: 0,
+                              cursor: 'pointer',
+                              fontSize: 'inherit',
+                              fontWeight: 'inherit',
+                              color: 'inherit',
+                              position: 'relative',
+                              zIndex: 9999
+                            }}
+                          >
+                            {implementation.title}
+                          </button>
+                        ) : (
+                          <span>{implementation.title}</span>
+                        )}
+                      </h3>
+                      <p className="mt-5 text-sm/6 text-gray-600">{implementation.description}</p>
+                    </div>
+                    <div className="mt-8 w-full">
+                      {implementation.href.startsWith('/') ? (
+                        <button
+                          onClick={() => handleClick(implementation.href)}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            padding: 0,
+                            margin: 0,
+                            cursor: 'pointer',
+                            width: '100%',
+                            position: 'relative',
+                            zIndex: 9999
+                          }}
+                        >
+                          <img
+                            alt=""
+                            src={implementation.imageUrl}
+                            className="w-full rounded-2xl bg-gray-50 object-cover hover:opacity-90 transition-opacity"
+                          />
+                        </button>
+                      ) : (
+                        <img
+                          alt=""
+                          src={implementation.imageUrl}
+                          className="w-full rounded-2xl bg-gray-50 object-cover"
+                        />
+                      )}
+                    </div>
+                    <div className="mt-6 flex items-center gap-x-4">
+                      <img
+                        alt=""
+                        src={implementation.author.imageUrl}
+                        className="h-10 w-10 rounded-full bg-gray-50"
+                      />
+                      <div className="text-sm">
+                        <p className="font-semibold text-gray-900">
+                          <a href={implementation.author.href}>
+                            <span className="absolute inset-0" />
+                            {implementation.author.name}
+                          </a>
+                        </p>
+                        <p className="text-gray-600">{implementation.author.role}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>

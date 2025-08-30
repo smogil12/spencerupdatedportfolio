@@ -54,9 +54,6 @@ const Sidebar = ({ children }) => {
 
               {/* Mobile Sidebar */}
               <div className="relative flex grow flex-col gap-y-5 overflow-y-auto bg-gray-800 px-6 pb-2">
-                <div className="relative flex h-16 shrink-0 items-center">
-                  <h1 className="text-xl font-bold text-white">Spencer Mogil</h1>
-                </div>
                 <nav className="flex flex-1 flex-col">
                   <ul className="flex flex-1 flex-col gap-y-7">
                     <li>
@@ -99,9 +96,6 @@ const Sidebar = ({ children }) => {
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 bg-gray-800">
             <div className="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-              <div className="flex h-16 shrink-0 items-center px-6">
-                <h1 className="text-xl font-bold text-white">Spencer Mogil</h1>
-              </div>
               <nav className="mt-5 flex-1 px-2 bg-gray-800">
                 {navigation.map((item) => (
                   <Link

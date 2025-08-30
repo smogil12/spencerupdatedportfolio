@@ -18,7 +18,7 @@ const Implementations = () => {
       category: { title: 'Customer Success', href: '#' },
       author: {
         name: 'Spencer Mogil',
-        role: 'Team Lead, Customer Success',
+        role: 'Technical Implementation Manager',
         href: '#',
         imageUrl: 'https://i.imgur.com/wioFsZM.jpg',
       },
@@ -36,7 +36,7 @@ const Implementations = () => {
       category: { title: 'Operations', href: '#' },
       author: {
         name: 'Spencer Mogil',
-        role: 'Team Lead, Customer Success',
+        role: 'Technical Implementation Manager',
         href: '#',
         imageUrl: 'https://i.imgur.com/wioFsZM.jpg',
       },
@@ -54,7 +54,7 @@ const Implementations = () => {
       category: { title: 'Onboarding', href: '#' },
       author: {
         name: 'Spencer Mogil',
-        role: 'Team Lead, Customer Success',
+        role: 'Technical Implementation Manager',
         href: '#',
         imageUrl: 'https://i.imgur.com/wioFsZM.jpg',
       },

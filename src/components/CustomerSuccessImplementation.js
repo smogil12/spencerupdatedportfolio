@@ -97,7 +97,7 @@ const CustomerSuccessImplementation = () => {
               />
               <div>
                 <p className="font-semibold text-gray-900">Spencer Mogil</p>
-                <p className="text-gray-600">Team Lead, Customer Success</p>
+                <p className="text-gray-600">Technical Implementation Manager</p>
               </div>
             </div>
           </div>

@@ -20,9 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build",
-    "heroku-start": "serve -s build -l $PORT"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

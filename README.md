@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# Portfolio React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Deployment
+
+This project is configured for deployment on Vercel.
+
+### Deploy to Vercel
+
+1. Install Vercel CLI (optional):
+```bash
+npm i -g vercel
+```
+
+2. Deploy using the Vercel CLI:
+```bash
+vercel
+```
+
+Or simply push your code to GitHub and import the repository in the [Vercel Dashboard](https://vercel.com/new).
+
+Vercel will automatically:
+- Detect that this is a Create React App
+- Run `npm run build`
+- Deploy the `build` folder
+- Set up continuous deployment from your Git repository
 
 ## Available Scripts
 

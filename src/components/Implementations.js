@@ -30,7 +30,7 @@ const Implementations = () => {
       description:
         'Streamlined internal workflows and implemented new tools that increased team efficiency by 40% and reduced onboarding time for new clients by 60%. Introduced automation for repetitive tasks and created standardized processes.',
       imageUrl:
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2015&q=80',
+        'https://i.imgur.com/pUXYJtF.png',
       date: 'Nov 2024',
       datetime: '2024-11-15',
       category: { title: 'Operations', href: '#' },
@@ -145,18 +145,22 @@ const Implementations = () => {
                             zIndex: 9999
                           }}
                         >
+                          <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-200">
+                            <img
+                              alt=""
+                              src={implementation.imageUrl}
+                              className="w-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        </button>
+                      ) : (
+                        <div className="relative overflow-hidden rounded-2xl shadow-lg bg-white border border-gray-200">
                           <img
                             alt=""
                             src={implementation.imageUrl}
-                            className="w-full rounded-2xl bg-gray-50 object-cover hover:opacity-90 transition-opacity"
+                            className="w-full object-cover"
                           />
-                        </button>
-                      ) : (
-                        <img
-                          alt=""
-                          src={implementation.imageUrl}
-                          className="w-full rounded-2xl bg-gray-50 object-cover"
-                        />
+                        </div>
                       )}
                     </div>
                     <div className="mt-6 flex items-center gap-x-4">

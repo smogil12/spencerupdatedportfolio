@@ -6,6 +6,7 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Implementations from './components/Implementations';
 import CustomerSuccessImplementation from './components/CustomerSuccessImplementation';
+import TomFordBeautyImplementation from './components/TomFordBeautyImplementation';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/implementations" element={<Implementations />} />
-          <Route path="/implementations/customer-success-implementation" element={<CustomerSuccessImplementation />} />
+          <Route path="/implementations/at-home" element={<CustomerSuccessImplementation />} />
+          <Route path="/implementations/tom-ford-beauty" element={<TomFordBeautyImplementation />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

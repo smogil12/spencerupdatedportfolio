@@ -7,15 +7,15 @@ const Implementations = () => {
   const implementations = [
     {
       id: 1,
-      title: 'Customer Success Implementation',
-      href: '/implementations/customer-success-implementation',
+      title: 'Tom Ford Beauty R&R Implementation',
+      href: '/implementations/tom-ford-beauty',
       description:
-        'Implemented comprehensive customer success strategies and processes that improved client retention rates by 35% and satisfaction scores across multiple enterprise accounts. Developed automated onboarding workflows and success metrics tracking.',
+        'Streamlined internal workflows and implemented new tools that increased team efficiency by 40% and reduced onboarding time for new clients by 60%. Introduced automation for repetitive tasks and created standardized processes.',
       imageUrl:
-        'https://i.imgur.com/kNcC5Io.jpeg',
-      date: 'Dec 2024',
-      datetime: '2024-12-01',
-      category: { title: 'Customer Success', href: '#' },
+        'https://i.imgur.com/pUXYJtF.png',
+      date: 'Sept 2025',
+      datetime: '2025-09-15',
+      category: { title: 'Technical Implementations', href: '#' },
       author: {
         name: 'Spencer Mogil',
         role: 'Technical Implementation Manager',
@@ -25,15 +25,15 @@ const Implementations = () => {
     },
     {
       id: 2,
-      title: 'Process Optimization & Workflow Automation',
-      href: '#',
+      title: 'At Home Rating & Review Implementation',
+      href: '/implementations/at-home',
       description:
-        'Streamlined internal workflows and implemented new tools that increased team efficiency by 40% and reduced onboarding time for new clients by 60%. Introduced automation for repetitive tasks and created standardized processes.',
+        'At Home recently changed switched to Emplifi for Ratings & Reviews, and we helped them migrate their historical reviews, and setup rating & review elements via our API',
       imageUrl:
-        'https://i.imgur.com/pUXYJtF.png',
-      date: 'Nov 2024',
-      datetime: '2024-11-15',
-      category: { title: 'Operations', href: '#' },
+        'https://i.imgur.com/kNcC5Io.jpeg',
+      date: 'Dec 2024',
+      datetime: '2024-12-01',
+      category: { title: 'Technical Implementations', href: '#' },
       author: {
         name: 'Spencer Mogil',
         role: 'Technical Implementation Manager',

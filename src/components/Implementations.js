@@ -7,6 +7,24 @@ const Implementations = () => {
   const implementations = [
     {
       id: 1,
+      title: 'Brooks Running Email Landing Page Project',
+      href: '/implementations/brooks-running',
+      description:
+        'We helped Brooks change their review submission workflow so that users land on a dedicated email landing page for more seamless review submissions',
+      imageUrl:
+        'https://i.imgur.com/4bDryxR.png',
+      date: 'Oct 2025',
+      datetime: '2025-10-01',
+      category: { title: 'Technical Implementations', href: '#' },
+      author: {
+        name: 'Spencer Mogil',
+        role: 'Technical Implementation Manager',
+        href: '#',
+        imageUrl: 'https://i.imgur.com/wioFsZM.jpg',
+      },
+    },
+    {
+      id: 2,
       title: 'Tom Ford Beauty R&R Implementation',
       href: '/implementations/tom-ford-beauty',
       description:
@@ -24,7 +42,7 @@ const Implementations = () => {
       },
     },
     {
-      id: 2,
+      id: 3,
       title: 'At Home Rating & Review Implementation',
       href: '/implementations/at-home',
       description:
@@ -34,24 +52,6 @@ const Implementations = () => {
       date: 'Dec 2024',
       datetime: '2024-12-01',
       category: { title: 'Technical Implementations', href: '#' },
-      author: {
-        name: 'Spencer Mogil',
-        role: 'Technical Implementation Manager',
-        href: '#',
-        imageUrl: 'https://i.imgur.com/wioFsZM.jpg',
-      },
-    },
-    {
-      id: 3,
-      title: 'Client Onboarding System Redesign',
-      href: '#',
-      description:
-        'Designed and implemented a new client onboarding system that reduced time-to-value by 60% and improved client satisfaction scores by 25%. Created interactive training materials and automated progress tracking.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
-      date: 'Oct 2024',
-      datetime: '2024-10-01',
-      category: { title: 'Onboarding', href: '#' },
       author: {
         name: 'Spencer Mogil',
         role: 'Technical Implementation Manager',
@@ -85,7 +85,7 @@ const Implementations = () => {
             Implementations
           </h2>
           <p className="mt-2 text-lg/8 text-gray-600">
-            Showcasing key implementations and process improvements from my professional experience in customer success and operations.
+            Showcasing key implementations and process improvements from my professional experience in technical implementations and customer success roles.
           </p>
           <div className="mt-16 space-y-20 lg:mt-20">
             {implementations.map((implementation) => {

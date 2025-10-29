@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Implementations from './components/Implementations';
 import CustomerSuccessImplementation from './components/CustomerSuccessImplementation';
 import TomFordBeautyImplementation from './components/TomFordBeautyImplementation';
+import BrooksRunningImplementation from './components/BrooksRunningImplementation';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/implementations" element={<Implementations />} />
           <Route path="/implementations/at-home" element={<CustomerSuccessImplementation />} />
           <Route path="/implementations/tom-ford-beauty" element={<TomFordBeautyImplementation />} />
+          <Route path="/implementations/brooks-running" element={<BrooksRunningImplementation />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

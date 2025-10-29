@@ -8,10 +8,12 @@ import Implementations from './components/Implementations';
 import CustomerSuccessImplementation from './components/CustomerSuccessImplementation';
 import TomFordBeautyImplementation from './components/TomFordBeautyImplementation';
 import BrooksRunningImplementation from './components/BrooksRunningImplementation';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Sidebar>
         <Routes>
           <Route path="/" element={<Home />} />

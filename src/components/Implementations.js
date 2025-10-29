@@ -62,15 +62,10 @@ const Implementations = () => {
   ];
 
   const handleClick = (href) => {
-    console.log('Button clicked! Navigating to:', href);
     if (href.startsWith('/')) {
-      try {
-        navigate(href);
-        console.log('React Router navigation successful');
-      } catch (error) {
-        console.log('React Router navigation failed, using fallback:', error);
-        window.location.href = href;
-      }
+      console.log('[Implementations] Navigating to:', href);
+      console.log('[Implementations] Current scroll before navigate:', window.scrollY);
+      navigate(href);
     }
   };
 
@@ -78,34 +73,36 @@ const Implementations = () => {
   console.log('Implementations data:', implementations);
 
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-gradient-to-b from-gray-50 to-white pt-8 pb-16 sm:pt-12 sm:pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-4xl">
-          <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            Implementations
-          </h2>
-          <p className="mt-2 text-lg/8 text-gray-600">
-            Showcasing key implementations and process improvements from my professional experience in technical implementations and customer success roles.
-          </p>
-          <div className="mt-16 space-y-20 lg:mt-20">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl mb-4">
+              Implementations
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Showcasing key implementations and process improvements from my professional experience in technical implementations and customer success roles.
+            </p>
+          </div>
+          <div className="space-y-12 lg:space-y-16">
             {implementations.map((implementation) => {
               console.log(`Implementation ${implementation.id} href:`, implementation.href);
               return (
-                <article key={implementation.id} className="relative isolate">
-                  <div className="max-w-xl">
-                    <div className="flex items-center gap-x-4 text-xs">
-                      <time dateTime={implementation.datetime} className="text-gray-500">
+                <article key={implementation.id} className="relative isolate bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 border border-gray-100">
+                  <div className="max-w-full">
+                    <div className="flex items-center gap-x-4 text-sm mb-4">
+                      <time dateTime={implementation.datetime} className="text-gray-500 font-medium">
                         {implementation.date}
                       </time>
                       <a
                         href={implementation.category.href}
-                        className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                        className="relative z-10 rounded-full bg-blue-50 px-3 py-1.5 font-medium text-blue-700 hover:bg-blue-100 transition-colors"
                       >
                         {implementation.category.title}
                       </a>
                     </div>
                     <div className="group relative">
-                      <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">
                         {implementation.href.startsWith('/') ? (
                           <button
                             onClick={() => handleClick(implementation.href)}
@@ -128,9 +125,9 @@ const Implementations = () => {
                           <span>{implementation.title}</span>
                         )}
                       </h3>
-                      <p className="mt-5 text-sm/6 text-gray-600">{implementation.description}</p>
+                      <p className="text-base text-gray-600 leading-relaxed mb-6">{implementation.description}</p>
                     </div>
-                    <div className="mt-8 w-full">
+                    <div className="mb-6 w-full">
                       {implementation.href.startsWith('/') ? (
                         <button
                           onClick={() => handleClick(implementation.href)}
@@ -163,15 +160,15 @@ const Implementations = () => {
                         </div>
                       )}
                     </div>
-                    <div className="mt-6 flex items-center gap-x-4">
+                    <div className="flex items-center gap-x-4 pt-4 border-t border-gray-100">
                       <img
                         alt=""
                         src={implementation.author.imageUrl}
-                        className="h-10 w-10 rounded-full bg-gray-50"
+                        className="h-12 w-12 rounded-full bg-gray-50 ring-2 ring-gray-200"
                       />
                       <div className="text-sm">
                         <p className="font-semibold text-gray-900">
-                          <a href={implementation.author.href}>
+                          <a href={implementation.author.href} className="hover:text-blue-600 transition-colors">
                             <span className="absolute inset-0" />
                             {implementation.author.name}
                           </a>

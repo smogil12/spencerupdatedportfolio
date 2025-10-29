@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 const BrooksRunningImplementation = () => {
+
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white pt-8 pb-16 sm:pt-12 sm:pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           {/* Back to Implementations Link */}
@@ -72,11 +73,6 @@ const BrooksRunningImplementation = () => {
                 <div className="flex-grow"><strong>Analytics & Reporting:</strong> Integration with analytics tools to track engagement and conversions.</div>
               </div>
             </div>
-
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Technical Implementation</h3>
-            <p className="text-gray-700 mb-6">
-              The implementation leverages our robust API infrastructure for both display and submission of reviews and visual content. This ensures scalability, reliability, and consistent performance across all touchpoints.
-            </p>
 
             <div className="bg-gray-50 rounded-lg p-6 mb-8">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Live Example</h4>

@@ -22,9 +22,7 @@ const Home = () => {
                   </span>
                 </h2>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  I am a Freelance Developer open to working on projects
-                  that use HTML, CSS, Javascript, jQuery, Node.JS, mySQL,
-                  express, Sequelize, and React.JS
+                  I am a Technical Implementation Manager with experience in Client Services as well as Account Management. In my current role, I am responsible for owning the full implementation process for enterprise and commercial clients who use Emplifi's Rating & Reviews and Social UGC products
                 </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
@@ -38,10 +36,10 @@ const Home = () => {
 
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <Link
-                      to="/portfolio"
+                      to="/implementations"
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-300 hover:text-indigo-600 hover:bg-green-200 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
                     >
-                      Portfolio
+                      Implementations
                     </Link>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">

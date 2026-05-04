@@ -31,7 +31,7 @@ const BrooksRunningImplementation = () => {
               Brooks Running Email Landing Page Project
             </h1>
             <p className="text-lg text-gray-600">
-              Designed and implemented a new client onboarding system that reduced time-to-value by 60% and improved client satisfaction scores by 25%. Created interactive training materials and automated progress tracking.
+              We recently made some changes for Brooks for their R&R products:
             </p>
           </div>
 
@@ -51,26 +51,22 @@ const BrooksRunningImplementation = () => {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">Implementation Overview</h2>
             
             <p className="text-gray-700 mb-6">
-              Designed and implemented a new client onboarding system that reduced time-to-value by 60% and improved client satisfaction scores by 25%. Created interactive training materials and automated progress tracking.
+              This was a large project across 22 different Brooks sites to modernize their customer journey and collect additional data points within our product.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Features Implemented</h3>
             <div className="text-gray-700 mb-8 space-y-3">
-              <div className="flex items-center">
-                <span className="flex-shrink-0 w-2 h-2 bg-black rounded-full mr-3"></span>
-                <div className="flex-grow"><strong>Email Template Design:</strong> Custom-designed responsive email templates for various campaigns.</div>
+              <div className="flex items-start">
+                <span className="flex-shrink-0 w-2 h-2 bg-black rounded-full mr-3 mt-2"></span>
+                <div className="flex-grow">Changed customer journey from submitting a review on PDP to submitting a review on a dedicated email landing page</div>
               </div>
-              <div className="flex items-center">
-                <span className="flex-shrink-0 w-2 h-2 bg-black rounded-full mr-3"></span>
-                <div className="flex-grow"><strong>Dynamic Content Integration:</strong> Personalized content delivery based on user preferences and behavior.</div>
+              <div className="flex items-start">
+                <span className="flex-shrink-0 w-2 h-2 bg-black rounded-full mr-3 mt-2"></span>
+                <div className="flex-grow">Added in custom verbiage within R&R elements across English-speaking and non-English speaking sites</div>
               </div>
-              <div className="flex items-center">
-                <span className="flex-shrink-0 w-2 h-2 bg-black rounded-full mr-3"></span>
-                <div className="flex-grow"><strong>A/B Testing Framework:</strong> Setup for continuous optimization of email performance.</div>
-              </div>
-              <div className="flex items-center">
-                <span className="flex-shrink-0 w-2 h-2 bg-black rounded-full mr-3"></span>
-                <div className="flex-grow"><strong>Analytics & Reporting:</strong> Integration with analytics tools to track engagement and conversions.</div>
+              <div className="flex items-start">
+                <span className="flex-shrink-0 w-2 h-2 bg-black rounded-full mr-3 mt-2"></span>
+                <div className="flex-grow">Created new sub-dimensions/shopper profile attributes across English-speaking and non-English speaking sites</div>
               </div>
             </div>
 

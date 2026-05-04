@@ -8,6 +8,7 @@ import Implementations from './components/Implementations';
 import CustomerSuccessImplementation from './components/CustomerSuccessImplementation';
 import TomFordBeautyImplementation from './components/TomFordBeautyImplementation';
 import BrooksRunningImplementation from './components/BrooksRunningImplementation';
+import EvoImplementation from './components/EvoImplementation';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/implementations/at-home" element={<CustomerSuccessImplementation />} />
           <Route path="/implementations/tom-ford-beauty" element={<TomFordBeautyImplementation />} />
           <Route path="/implementations/brooks-running" element={<BrooksRunningImplementation />} />
+          <Route path="/implementations/evo" element={<EvoImplementation />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

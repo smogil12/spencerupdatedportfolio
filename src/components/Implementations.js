@@ -6,6 +6,23 @@ const Implementations = () => {
 
   const implementations = [
     {
+      id: 0,
+      title: 'Evo.com R&R Implementation',
+      href: '/implementations/evo',
+      description:
+        'Evo.com launched our R&R JS widgets on prod: Power Reviews migration, pre-launch syndication, and AI topics in the widgets.',
+      imageUrl: '/evo.png',
+      date: 'May 2026',
+      datetime: '2026-05-01',
+      category: { title: 'Technical Implementations', href: '#' },
+      author: {
+        name: 'Spencer Mogil',
+        role: 'Technical Implementation Manager',
+        href: '#',
+        imageUrl: 'https://i.imgur.com/wioFsZM.jpg',
+      },
+    },
+    {
       id: 1,
       title: 'Brooks Running Email Landing Page Project',
       href: '/implementations/brooks-running',

@@ -28,8 +28,7 @@ const EvoImplementation = () => {
               Evo.com R&R Implementation
             </h1>
             <p className="text-lg text-gray-600">
-              Evo.com recently launched our R&R JS widgets on their prod site. This was a successful implementation, in that
-              we were able to:
+              Evo.com recently launched our R&R JS widgets on their production site. Read below on how we helped them out
             </p>
           </div>
 
@@ -47,11 +46,7 @@ const EvoImplementation = () => {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">Implementation Overview</h2>
 
             <p className="text-gray-700 mb-6">
-              Evo.com recently launched our R&R JS widgets on their prod site. This was a successful implementation, in that
-              we were able to import ~270K reviews from Power Reviews (plus sub-dimensions, shopper profile attributes, and
-              images), set up inbound syndication to their prod instance before launch (74 sources, ~550K syndicated reviews
-              at go-live), and enable our new AI topics feature in the JS widgets—they plan to try the AI summary feature
-              next.
+              Evo.com switched to Emplifi R&R from Power Reviews so that they could make use of our fast JS widgets made with ADA compliance in mind, vast Syndication Network, and new AI features.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Features Implemented</h3>

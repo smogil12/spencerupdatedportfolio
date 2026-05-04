@@ -9,8 +9,7 @@ const Implementations = () => {
       id: 0,
       title: 'Evo.com R&R Implementation',
       href: '/implementations/evo',
-      description:
-        'Evo.com launched our R&R JS widgets on prod: Power Reviews migration, pre-launch syndication, and AI topics in the widgets.',
+      description: 'Evo.com recently switched to Emplifi for Ratings & Reviews',
       imageUrl: '/evo.png',
       date: 'May 2026',
       datetime: '2026-05-01',

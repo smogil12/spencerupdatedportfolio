@@ -73,6 +73,22 @@ const EvoImplementation = () => {
                 </div>
               </div>
             </div>
+
+            <div className="bg-gray-50 rounded-lg p-6 mb-8">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Live Example</h4>
+              <p className="text-gray-700 mb-4">
+                See this implementation in action on Evo.com:
+              </p>
+              <a
+                href="https://www.evo.com/down-jackets/the-north-face-1996-retro-nuptse-jacket-womens?image=156388/1154716/the-north-face-1996-retro-nuptse-jacket-women-s-.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-lg hover:shadow-xl transition-all duration-200"
+                style={{ color: 'white' }}
+              >
+                View Live Example
+              </a>
+            </div>
           </div>
 
           <div className="border-t border-gray-200 pt-8">
